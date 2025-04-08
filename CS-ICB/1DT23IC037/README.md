@@ -84,6 +84,3 @@ yaml
 Copy
 Edit
 
----
-
-Let me know if your project uses **Swing/JavaFX** or an **API**, and I can tweak it accordingl.
