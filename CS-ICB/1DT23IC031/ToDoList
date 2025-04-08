@@ -1,0 +1,87 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class TodoList {
+    private ArrayList<String> tasks;
+    private Scanner scanner;
+
+    public TodoList() {
+        tasks = new ArrayList<>();
+        scanner = new Scanner(System.in);
+    }
+
+    private void displayMenu() {
+        System.out.println("\n=== To-Do List ===");
+        System.out.println("1. View tasks");
+        System.out.println("2. Add task");
+        System.out.println("3. Remove task");
+        System.out.println("4. Exit");
+    }
+
+    private void viewTasks() {
+        if (tasks.isEmpty()) {
+            System.out.println("\nNo tasks in the list!");
+        } else {
+            System.out.println("\nYour tasks:");
+            for (int i = 0; i < tasks.size(); i++) {
+                System.out.println((i + 1) + ". " + tasks.get(i));
+            }
+        }
+    }
+
+    private void addTask() {
+        System.out.print("\nEnter the task: ");
+        String task = scanner.nextLine();
+        tasks.add(task);
+        System.out.println("Task '" + task + "' added!");
+    }
+
+    private void removeTask() {
+        viewTasks();
+        if (!tasks.isEmpty()) {
+            try {
+                System.out.print("\nEnter task number to remove: ");
+                int num = Integer.parseInt(scanner.nextLine());
+                if (num >= 1 && num <= tasks.size()) {
+                    String removed = tasks.remove(num - 1);
+                    System.out.println("Task '" + removed + "' removed!");
+                } else {
+                    System.out.println("Invalid task number!");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter a valid number!");
+            }
+        }
+    }
+
+    public void run() {
+        while (true) {
+            displayMenu();
+            System.out.print("\nEnter your choice (1-4): ");
+            String choice = scanner.nextLine();
+
+            switch (choice) {
+                case "1":
+                    viewTasks();
+                    break;
+                case "2":
+                    addTask();
+                    break;
+                case "3":
+                    removeTask();
+                    break;
+                case "4":
+                    System.out.println("\nGoodbye!");
+                    scanner.close();
+                    return;
+                default:
+                    System.out.println("\nInvalid choice! Please select 1-4.");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        TodoList todo = new TodoList();
+        todo.run();
+    }
+}
