@@ -1,86 +1,90 @@
-# 💱 Currency Converter - Java
+# 💱 Currency Converter - Java Swing Application
 
-A simple and interactive Currency Converter application built in **Java**. This tool allows users to convert an amount from one currency to another using real-time exchange rates (optional if API integration is included) or static predefined rates.
+## 📝 Description
 
-## 🚀 Features
+This is a simple **Currency Converter** desktop application built using Java **Swing** for the graphical user interface. It allows users to convert an amount from one currency to another using predefined static exchange rates.
 
-- Convert between multiple currencies (e.g., USD, EUR, INR, JPY, etc.)
-- Clean and user-friendly interface (Console or GUI-based)
-- Support for both static and dynamic exchange rates (via API)
-- Input validation and error handling
-- Lightweight and easy to use
+### 🌍 Supported Currencies:
 
-## 🛠️ Tech Stack
+- USD (United States Dollar)
+- EUR (Euro)
+- GBP (British Pound)
+- JPY (Japanese Yen)
+- CAD (Canadian Dollar)
 
-- **Language**: Java
-- **IDE**: IntelliJ IDEA / Eclipse / NetBeans
-- **API (Optional)**: [ExchangeRate-API](https://www.exchangerate-api.com/) / [Open Exchange Rates](https://openexchangerates.org/)
+## ✅ Features
 
-## 📦 Installation
+- Simple and user-friendly interface.
+- Currency selection from dropdown menus.
+- Real-time calculation based on static exchange rates.
+- Error handling for invalid input.
 
-1. **Clone the Repository**
+## 🔧 How It Works
+
+1. User enters the amount in the input field.
+2. Selects the **"From"** and **"To"** currencies using dropdown menus.
+3. Clicks the **Convert** button.
+4. Result is displayed in the result field.
+
+### 💱 Static Exchange Rates (relative to USD)
+
+| Currency | Exchange Rate |
+|----------|----------------|
+| USD      | 1.00           |
+| EUR      | 0.88           |
+| GBP      | 0.76           |
+| JPY      | 109.45         |
+| CAD      | 1.31           |
+
+---
+
+## 🚀 Getting Started
+
+### ✅ Prerequisites
+
+Make sure you have:
+
+- **Java JDK 8** or higher installed
+- A text editor or IDE (like IntelliJ IDEA, Eclipse, VS Code)
+
+---
+
+### 🔄 How to Compile and Run
+
+1. Save the code into a file named `CurrencyConverter.java`.
+
+2. Open a terminal or command prompt in the directory where the file is saved.
+
+3. **Compile the code:**
+
    ```bash
-   git clone https://github.com/your-username/currency-converter-java.git
-   cd currency-converter-java
-Compile the Project
-
-bash
-Copy
-Edit
-javac CurrencyConverter.java
-Run the Application
+   javac CurrencyConverter.java
+Run the application:
 
 bash
 Copy
 Edit
 java CurrencyConverter
-📸 Screenshots
-Add screenshots or GIFs here if it’s a GUI app for better visualization
+🖼️ Screenshot
+(Insert screenshot of the UI here — showing input field, dropdowns, and result output)
 
-🧠 How It Works
-Takes input from the user: amount, source currency, and target currency.
-
-Either uses a predefined exchange rate map or fetches current rates from an API.
-
-Displays the converted amount to the user.
-
-🔧 Example
-text
-Copy
-Edit
-Enter amount: 100
-From currency (e.g., USD): USD
-To currency (e.g., EUR): INR
-
-100 USD is equal to 8250 INR
 📁 Project Structure
-text
 Copy
 Edit
-currency-converter-java/
-├── CurrencyConverter.java
-├── ExchangeRateService.java (optional for API)
-└── README.md
-✨ Future Improvements
-Add GUI using Java Swing or JavaFX
+CurrencyConverter.java
+README.md
+💡 Notes
+This app uses hardcoded exchange rates — it does not fetch real-time data.
 
-Add historical data graph using charts
+For real-world use, consider integrating with currency conversion APIs:
 
-Improve error handling and validations
+https://www.exchangerate-api.com/
 
-Add support for more currencies
+https://openexchangerates.org/
 
-Integrate more robust APIs
-
-🙌 Contributing
-Contributions are welcome! Feel free to fork this repository, submit issues, or create pull requests.
+https://currencyapi.com/
 
 📜 License
-This project is licensed under the MIT License.
+This project is open-source and available under the MIT License. You are free to use, modify, and distribute it.
 
-Made with ❤️ in Java.
-
-yaml
-Copy
-Edit
 
