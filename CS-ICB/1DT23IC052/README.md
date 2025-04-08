@@ -1,30 +1,56 @@
-📚 Bookstore Billing System
-A simple Java console application that simulates a billing system for a bookstore. It allows customers to view a list of books, select books for purchase, enter quantities, and print a final bill with total amount due.
+/*
+----------------------------------------------------------------------------------
+📚 Bookstore Billing System (Java Console Application)
 
-✅ Features
-Predefined list of books with titles and prices
+A simple console-based billing system for a bookstore developed using Java.
+This project demonstrates object-oriented programming (OOP), list manipulation,
+and user input handling using Scanner.
 
-Allows users to select books by number
+----------------------------------------------------------------------------------
+✅ FEATURES:
+- Display a catalog of books with prices
+- Allow users to choose books and input quantity
+- Calculates total amount dynamically
+- Generates a neat, formatted receipt
+- Validates user input to avoid errors
 
-Supports quantity input for each book
+----------------------------------------------------------------------------------
+▶️ HOW TO RUN:
 
-Displays a detailed receipt with item-wise billing and total
+1. Save this file as: BookstoreBillingSystem.java
+2. Open a terminal or command prompt
+3. Compile the program:
+   javac BookstoreBillingSystem.java
+4. Run the program:
+   java BookstoreBillingSystem
 
-Graceful handling of invalid inputs
+----------------------------------------------------------------------------------
+📋 SAMPLE OUTPUT:
 
-🛠️ How It Works
-Display Book Catalog:
-The program first shows a list of books available in the bookstore with their prices.
+==== Welcome to City Bookstore ====
 
-User Input Loop:
-Users can input the number corresponding to a book and the quantity they wish to buy. The loop continues until the user enters 0.
+----- BOOK CATALOG -----
+1. The Alchemist           Rs. 299.00
+2. To Kill a Mockingbird   Rs. 349.00
+...
 
-Bill Generation:
-Once checkout is chosen, the program prints a neat receipt showing all selected books, their quantities, individual totals, and the final amount.
+Enter book number to purchase (0 to checkout): 1
+Enter quantity: 2
+2 x "The Alchemist" added to cart.
 
-💻 Technologies Used
-Language: Java
+========== RECEIPT ==========
+Book                      Qty        Amount    
+The Alchemist             2          Rs. 598.00
+-----------------------------------
+Total Amount:            Rs. 598.00
+===================================
+Thanks for shopping with us!
 
-Tools: Java SE (Standard Edition)
-
-IDE Suggestions: IntelliJ IDEA / Eclipse / VS Code
+----------------------------------------------------------------------------------
+📌 FUTURE IMPROVEMENTS:
+- Apply discounts, taxes, or promo codes
+- Add remove/edit item feature
+- Store catalog in external file (CSV/JSON)
+- Add GUI using Swing or JavaFX
+----------------------------------------------------------------------------------
+*/
