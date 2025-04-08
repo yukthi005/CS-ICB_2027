@@ -1,66 +1,95 @@
-# CS ICB 2027 📘
-Shared repo for CS-ICB student projects.
+```markdown
+# 🎮 Word Guesser Game (Java Console App)
 
+A simple and interactive word guessing game built using plain Java. It's a fun little project that mimics a Hangman-style game — all within a single `.java` file!
 
+---
 
+## 🚀 Features
 
+- Random word selection from a predefined list
+- Limited number of incorrect guesses
+- Reveals correct letters as you go
+- Tracks already guessed letters
+- Simple and clean console interface
 
-Welcome to the official repository for # CS ICB 2027 📘CS ICB 2027 – a collection of coursework, mini projects, assignments, and learning resources for the 2027 Computer Science batch.
+---
 
-## 📂 Repository Structure
+## 📸 Sample Gameplay
 
 ```
-cs-icb-2027/
-│
-├── mini-projects/           # Java, Python, Web, or DBMS-based mini projects
-├── assignments/             # Course assignments and problem sets
-├── notes/                   # Lecture notes, PDFs, reference material
-├── labs/                    # Lab exercises and solutions
-└── README.md                # You're here!
+🎮 Welcome to Word Guesser Game!
+Guess the word by typing one letter at a time.
+
+Word: _ _ _ _ _
+Enter a letter: a
+✅ Good guess!
+
+Word: a _ _ _ _
+Enter a letter: z
+❌ Wrong! Attempts left: 6
+
+...
+🎉 Congrats! You guessed the word: apple
 ```
 
-## 🎯 Objective
+---
 
-This repository serves as a centralized hub for:
+## 🧩 How to Run
 
-- Submitting and accessing course assignments  
-- Collaborating on mini projects  
-- Sharing resources and study material  
-- Documenting learning throughout the course  
+1. **Save the file**  
+   Save the code in a file named `WordGuesserGame.java`
 
-## 👩‍💻 Technologies Used
+2. **Open terminal and compile**
+   ```bash
+   javac WordGuesserGame.java
+   ```
 
-Depending on the modules and projects, this repo may include:
+3. **Run the program**
+   ```bash
+   java WordGuesserGame
+   ```
 
-- Java, Python, C/C++
-- SQL & DBMS tools
-- HTML/CSS/JS (Web dev basics)
-- Git & GitHub for version control
+---
 
-## 📚 Courses Covered
+## 📁 File Structure
 
-This repository may include resources from the following CS core subjects:
-- Programming Fundamentals
-- Data Structures & Algorithms
-- Database Management Systems (DBMS)
-- Operating Systems
-- Computer Networks
-- Cybersecurity (electives and mini projects)
+```
+WordGuesserGame.java   // All logic contained in this file
+```
 
-## 🛠️ How to Contribute
+---
 
-1. Fork this repository  
-2. Create a new branch: `git checkout -b feature-name`  
-3. Commit your changes: `git commit -m "Add something"`  
-4. Push to the branch: `git push origin feature-name`  
-5. Open a Pull Request
+## 🛠 Requirements
 
-## 📅 Timeline
+- Java 8 or newer
+- A command line terminal (Windows, Mac, or Linux)
 
-> Repository maintained for the academic journey of the CS ICB 2027 batch.  
-> Contributions welcome from classmates and peers.
+---
 
-## 📄 License
+## 💡 Future Ideas
 
-This repository is intended for educational use.  
-Content may be shared under MIT or Creative Commons licenses, depending on individual files.
+- GUI version using Swing or JavaFX
+- Pull word list from a file or API
+- Add difficulty levels (Easy/Medium/Hard)
+- Visual hangman-style graphics in ASCII
+
+---
+
+## 📜 License
+
+This project is released under the [MIT License](LICENSE)
+
+---
+
+## 👤 Author
+
+Created by [Your Name](https://github.com/your-username)
+
+---
+
+```
+
+---
+
+Let me know if you want help uploading this to GitHub or generating a license file!
