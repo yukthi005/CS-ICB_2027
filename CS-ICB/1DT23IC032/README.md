@@ -1,10 +1,1 @@
-# Student Submission Folder
-
-Please place your project files for CS-ICB here.
-
-✅ Guidelines:
-- Include a `README.md` explaining your project (if applicable).
-- Upload only your own work.
-- Do not rename this folder.
-
-🎓 Good luck and happy coding!
+This program contains code that allows for users to perform the following operations: Checking Balance, Deposit, Withdraw, & Exit. On the Back-End, the program runs processes such as User Authentication and Loading Accounts from Files
