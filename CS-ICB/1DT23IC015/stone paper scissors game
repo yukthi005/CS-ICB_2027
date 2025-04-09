@@ -1,0 +1,87 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class RockPaperScissorsGame {
+
+    public static void main(String[] args) {
+
+        // 1. Initialize tools and scores
+        Scanner scanner = new Scanner(System.in); // For user input
+        Random random = new Random();            // For computer's choice
+        int playerScore = 0;
+        int computerScore = 0;
+        int ties = 0;
+
+        System.out.println("Welcome to Rock, Paper, Scissors!");
+
+        // 2. Main game loop (continues until user decides to stop)
+        while (true) {
+            // --- Inside the loop for each round ---
+
+            // 3. Get Player's Choice (with validation)
+            String playerChoice;
+            while (true) { // Input validation loop
+                System.out.print("\nEnter your choice (rock, paper, or scissors): ");
+                playerChoice = scanner.nextLine().toLowerCase(); // Read input and convert to lowercase
+
+                if (playerChoice.equals("rock") || playerChoice.equals("paper") || playerChoice.equals("scissors")) {
+                    break; // Valid input, exit the validation loop
+                } else {
+                    System.out.println("Invalid choice. Please enter 'rock', 'paper', or 'scissors'.");
+                }
+            }
+
+            // 4. Generate Computer's Choice
+            int computerChoiceNum = random.nextInt(3); // Generates a random number: 0, 1, or 2
+            String computerChoice;
+
+            if (computerChoiceNum == 0) {
+                computerChoice = "rock";
+            } else if (computerChoiceNum == 1) {
+                computerChoice = "paper";
+            } else { // computerChoiceNum == 2
+                computerChoice = "scissors";
+            }
+
+            System.out.println("Computer chose: " + computerChoice);
+
+            // 5. Determine the Winner
+            String result;
+            if (playerChoice.equals(computerChoice)) {
+                result = "It's a tie!";
+                ties++;
+            } else if ((playerChoice.equals("rock") && computerChoice.equals("scissors")) ||
+                       (playerChoice.equals("scissors") && computerChoice.equals("paper")) ||
+                       (playerChoice.equals("paper") && computerChoice.equals("rock"))) {
+                result = "You win!";
+                playerScore++;
+            } else {
+                result = "Computer wins!";
+                computerScore++;
+            }
+
+            // 6. Print the result of the round
+            System.out.println(result);
+
+            // 7. Display current scores
+            System.out.println("Score: Player - " + playerScore + ", Computer - " + computerScore + ", Ties - " + ties);
+
+            // 8. Ask to play again
+            System.out.print("Play again? (yes/no): ");
+            String playAgain = scanner.nextLine().toLowerCase();
+
+            if (!playAgain.equals("yes")) {
+                break; // Exit the main game loop
+            }
+            // If 'yes', the loop continues automatically
+        }
+
+        // 9. Game Over - Print Final Scores
+        System.out.println("\n--- Game Over ---");
+        System.out.println("Final Score: Player - " + playerScore + ", Computer - " + computerScore + ", Ties - " + ties);
+        System.out.println("Thanks for playing!");
+
+        // 10. Close the scanner
+        scanner.close();
+    }
+}
