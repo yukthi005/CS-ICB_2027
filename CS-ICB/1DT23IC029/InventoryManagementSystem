@@ -1,0 +1,150 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class InventoryManagementSystem {
+    private static ArrayList<Product> inventory = new ArrayList<>();
+    private static Scanner scanner = new Scanner(System.in);
+    
+    public static void main(String[] args) {
+        while (true) {
+            System.out.println("\n--- Inventory Management System ---");
+            System.out.println("1. Add Product");
+            System.out.println("2. View Products");
+            System.out.println("3. Update Product Quantity");
+            System.out.println("4. Delete Product");
+            System.out.println("5. Exit");
+            System.out.print("Choose an option: ");
+            int choice = scanner.nextInt();
+            scanner.nextLine();  // Consume newline character
+
+            switch (choice) {
+                case 1:
+                    addProduct();
+                    break;
+                case 2:
+                    viewProducts();
+                    break;
+                case 3:
+                    updateProductQuantity();
+                    break;
+                case 4:
+                    deleteProduct();
+                    break;
+                case 5:
+                    System.out.println("Exiting the system...");
+                    return;
+                default:
+                    System.out.println("Invalid choice, please try again.");
+            }
+        }
+    }
+
+    // Method to add a new product
+    private static void addProduct() {
+        System.out.print("Enter Product ID: ");
+        int id = scanner.nextInt();
+        scanner.nextLine();  // Consume newline character
+        System.out.print("Enter Product Name: ");
+        String name = scanner.nextLine();
+        System.out.print("Enter Product Quantity: ");
+        int quantity = scanner.nextInt();
+        System.out.print("Enter Product Price: ");
+        double price = scanner.nextDouble();
+
+        Product product = new Product(id, name, quantity, price);
+        inventory.add(product);
+        System.out.println("Product added successfully.");
+    }
+
+    // Method to view all products
+    private static void viewProducts() {
+        if (inventory.isEmpty()) {
+            System.out.println("No products available.");
+        } else {
+            System.out.println("\n--- Product List ---");
+            for (Product product : inventory) {
+                System.out.println(product);
+            }
+        }
+    }
+
+    // Method to update product quantity
+    private static void updateProductQuantity() {
+        System.out.print("Enter Product ID to update: ");
+        int id = scanner.nextInt();
+        
+        Product product = findProductById(id);
+        if (product != null) {
+            System.out.print("Enter new quantity for " + product.getName() + ": ");
+            int newQuantity = scanner.nextInt();
+            product.setQuantity(newQuantity);
+            System.out.println("Product quantity updated successfully.");
+        } else {
+            System.out.println("Product not found.");
+        }
+    }
+
+    // Method to delete a product
+    private static void deleteProduct() {
+        System.out.print("Enter Product ID to delete: ");
+        int id = scanner.nextInt();
+
+        Product product = findProductById(id);
+        if (product != null) {
+            inventory.remove(product);
+            System.out.println("Product deleted successfully.");
+        } else {
+            System.out.println("Product not found.");
+        }
+    }
+
+    // Helper method to find product by ID
+    private static Product findProductById(int id) {
+        for (Product product : inventory) {
+            if (product.getId() == id) {
+                return product;
+            }
+        }
+        return null;
+}
+}
+
+class Product {
+    private int id;
+    private String name;
+    private int quantity;
+    private double price;
+
+    // Constructor
+    public Product(int id, String name, int quantity, double price) {
+        this.id = id;
+        this.name = name;
+        this.quantity = quantity;
+        this.price = price;
+    }
+
+    // Getters and setters
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public String toString() {
+        return "Product ID: " + id + ", Name: " + name + ", Quantity: " + quantity + ", Price: $" + price;
+    }
+}
