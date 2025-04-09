@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class BusTicketGenerator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input values
+        System.out.print("Enter source: ");
+        String source = scanner.nextLine();
+
+        System.out.print("Enter destination: ");
+        String destination = scanner.nextLine();
+
+        System.out.print("Enter distance in kilometers: ");
+        int distance = scanner.nextInt();
+
+        // Fare calculation (₹2 per km)
+        int fare = distance * 2;
+
+        // Print ticket
+        System.out.println("\n----- BUS TICKET -----");
+        System.out.println("From       : " + source);
+        System.out.println("To         : " + destination);
+        System.out.println("Distance   : " + distance + " km");
+        System.out.println("Fare       : ₹" + fare);
+        System.out.println("----------------------");
+
+        scanner.close();
+    }
+}
