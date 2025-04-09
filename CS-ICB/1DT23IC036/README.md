@@ -30,34 +30,6 @@ A simple Java Swing-based application to track your daily expenses. Add expenses
 
 ---
 
-## 📦 Project Details
-
-📂 Project Structure
-
-📦 ExpenseTracker.java     # Main Java application
-📄 expenses.csv            # (Generated) CSV with your data
-📝 README.md               # This file
-
-🧾 Sample Output (CSV)
-
-100,Groceries
-50,Transport
-200,Utilities
-Total,Rs. 350.0
-
-🔮 Future Enhancements
-
-📅 Add date for each expense
-
-📈 Visualize with charts (JFreeChart or JavaFX)
-
-🔐 Login system
-
-📊 Monthly summary reports
-
-☁️ Cloud sync or local database
-
-
-📜 License
+## 📜 License
 
 Licensed under the MIT License
